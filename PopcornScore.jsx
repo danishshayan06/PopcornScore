@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
-const CLIENT_ID = "46667367097-42d9d34ajds8hfc8kct4a0tfir116vh0.apps.googleusercontent.com"
-
 /* ─── Google Font loader ─────────────────────────────────────── */
 const FontLoader = () => (
   <style>{`
@@ -594,7 +592,7 @@ function PopcornScoreInner() {
 
 export default function PopcornScore() {
   return (
-    <GoogleOAuthProvider clientId={CLIENT_ID}>
+    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <PopcornScoreInner />
     </GoogleOAuthProvider>
   );
