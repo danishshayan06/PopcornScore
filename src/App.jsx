@@ -3,12 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import PopcornScore from "./PopcornScore";
+import LoginPage from "./LoginPage";
 
 function App() {
    return (
-      <PopcornScore />
+      <LoginPage />
    )
 }
 
 export default App
+
+

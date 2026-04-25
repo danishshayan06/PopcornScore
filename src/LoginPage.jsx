@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
-
+import {jwtDecode} from "jwt-decode"
+import { useNavigate  } from 'react-router-dom'
 const CLIENT_ID = "46667367097-42d9d34ajds8hfc8kct4a0tfir116vh0.apps.googleusercontent.com"
 
 /* ─── Google Font loader ─────────────────────────────────────── */
@@ -456,6 +457,8 @@ const SignInForm = ({ onSwitch }) => {
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             console.log("Login Successful:", credentialResponse);
+            console.log(jwtDecode(credentialResponse.credential))
+            navigate("/Home")
           }}
           onError={() => {
             console.log("Login Failed");
@@ -592,8 +595,11 @@ function PopcornScoreInner() {
   );
 }
 
-export default function PopcornScore() {
+export default function LoginPage() {
+
+  const navigate = useNavigate()
   return (
+
     <GoogleOAuthProvider clientId={CLIENT_ID}>
       <PopcornScoreInner />
     </GoogleOAuthProvider>
